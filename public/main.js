@@ -1,25 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-  // // The Firebase SDK is initialized and available here!
-  //
-  // firebase.auth().onAuthStateChanged(user => { });
-  // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-  // firebase.messaging().requestPermission().then(() => { });
-  // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-  //
-  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+import firebaseInit from "./firebase.js";
+firebaseInit();
 
-  try {
-    let app = firebase.app();
-    let features = ["auth", "database", "messaging", "storage"].filter(
-      (feature) => typeof app[feature] === "function"
-    );
-    document.getElementById(
-      "load"
-    ).innerHTML = `Firebase SDK loaded with ${features.join(", ")}`;
-  } catch (e) {
-    console.error(e);
-    document.getElementById("load").innerHTML =
-      "Error loading the Firebase SDK, check the console.";
-  }
-});
+const newYears = new Date(`1 Jan ${new Date().getFullYear() + 1}`);
+
+const format = (n) => (n < 10 ? `0${n}` : `${n}`);
+
+const getSeconds = (date) => Math.floor(date / 1000);
+const getMinutes = (date) => Math.floor(date / 1000 / 60);
+const getHours = (date) => Math.floor(date / 1000 / 60 / 60);
+const getDays = (date) => Math.floor(date / 1000 / 60 / 60 / 24);
+
+function countdown() {
+  const left = new Date(newYears - new Date());
+
+  seconds.innerHTML = format(getSeconds(left) % 60);
+  minutes.innerHTML = format(getMinutes(left) % 60);
+  hours.innerHTML = format(getHours(left) % 24);
+  days.innerHTML = format(getDays(left) % 365);
+}
+
+countdown();
+setInterval(countdown, 1000);

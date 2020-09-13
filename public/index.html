@@ -18,19 +18,34 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>
-        You're seeing this because you've successfully setup Firebase Hosting.
-        Now it's time to go build something extraordinary!
-      </p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/"
-        >Open Hosting Documentation</a
-      >
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <main>
+      <h1>New Year Eve</h1>
 
-    <script src="main.js"></script>
+      <div class="countdown-container">
+        <div class="countdown-el">
+          <p class="big-text" id="days">0</p>
+          <span>days</span>
+        </div>
+        <div class="countdown-el">
+          <p class="big-text" id="hours">0</p>
+          <span>hours</span>
+        </div>
+        <div class="countdown-el">
+          <p class="big-text" id="minutes">0</p>
+          <span>minutes</span>
+        </div>
+        <div class="countdown-el">
+          <p class="big-text" id="seconds">0</p>
+          <span>seconds</span>
+        </div>
+      </div>
+
+      <p>left until the new year</p>
+    </main>
+    <footer>
+      <a href="#">source</a>
+    </footer>
+
+    <script src="main.js" type="module"></script>
   </body>
 </html>
