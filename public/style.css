@@ -65,14 +65,3 @@ h1 {
 .countdown-el span {
   font-size: 0.9rem;
 }
-
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0.5rem;
-}
